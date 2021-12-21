@@ -5,7 +5,7 @@ if number < 0:
     renum = number % -10
 else:
     renum = number % 10
-print("The last digit of {:d} is {:d}".format(number, renum), end=" ")
+print("Last digit of {:d} is {:d}".format(number, renum), end=" ")
 if((renum) > 5):
     print("and is greater than 5")
 elif((renum) == 0):
