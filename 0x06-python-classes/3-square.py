@@ -1,21 +1,25 @@
 #!/usr/bin/python3
-"""Defines a 'Square' class with a private instance attribute"""
+"""Class Square"""
 
 
 class Square:
-    """Definition of 'Square'"""
+    """Class Square that defines a square:
+        - Private instance attribute: size
+        - Instantiation with optional size: def __init__(self, size=0)"""
     def __init__(self, size=0):
-        """Inits Square with a size integer
-
-            Args:
-                size: An integer size of the square.
-
-            Raises:
-                TypeError: The size argument is not an integer.
-                ValueError: The size argument is negative.
-        """
+        """Size is a private attribute :
+            - size must be an integer, otherwise raise a TypeError exception
+              with the message size must be an integer
+            - if size is less than 0, raise a ValueError exception with the
+              message size must be >= 0"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
+        else:
+            self.__size = size
+
+    def area(self):
+        """Public instances  method:
+            * Return: The current  square are"""
+        return (self.__size * self.__size)
