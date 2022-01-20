@@ -1,12 +1,17 @@
 #!/usr/bin/python3
-class Square:
-    """Simple square class with his size as a field"""
+"""Class Square"""
 
+
+class Square:
+    """Class Square that defines a square:
+        - Private instance attribute: size
+        - Instantiation with optional size: def __init__(self, size=0)"""
     def __init__(self, size=0):
-        """ Instance the class Square
-            Arguments:
-                @size: the size of every side of the Square,
-                        it must be a positive integer value"""
+        """Size is a private attribute :
+            - size must be an integer, otherwise raise a TypeError exception
+              with the message size must be an integer
+            - if size is less than 0, raise a ValueError exception with the
+              message size must be >= 0"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -14,42 +19,28 @@ class Square:
         else:
             self.__size = size
 
+    def area(self):
+        """Public instances  method:
+            * Return: The current  square are"""
+        return (self.__size * self.__size)
+
     @property
     def size(self):
-        """ Getter for the field size as a property
-            Return:
-                    Value of size"""
-        return (self.__size)
+        return self.__size
 
     @size.setter
-    def size(self, value):
-        """ Setter for the field size as a property.
-            Arguments:
-                @value: the value of size
-                        that must be a positive integer value."""
-        if not isinstance(value, int):
+    def size(self, new_size):
+        if not isinstance(new_size, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif new_size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = value
-
-    def area(self):
-        """ Compute the area of a square
-            with the formula:
-                                area = @size ^ 2 = @size * @size
-            Return:
-                    Power of the Square size to 2
-                    or size multiplicated by size."""
-        return (self.__size ** 2)
+            self.__size = new_size
 
     def my_print(self):
-        """ Prints a square using the character # in the standard output
-            or a blank line if @size is 0"""
-        if not self.size:
+        """Print Square"""
+        if self.size == 0:
             print()
         else:
-            for row in range(self.__size):
-                for column in range(self.__size):
-                    print("#", end="")
-                print()
+            for i in range(self.size):
+                print('#' * self.size)
