@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Methods module"""
+
+
 def lookup(obj):
     """
     function that returns the list of variable
