@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Class student"""
+"""class"""
 
 
 class Student:
@@ -10,9 +10,9 @@ class Student:
 
     def to_json(self, attrs=None):
         if attrs is not None:
-            q = {}
+            k = {}
             for a in attrs:
                 if a in self.__dict__:
-                    q[a] = self.__dict__[a]
-                    return q
+                    k[a] = self.__dict__[a]
+            return k
         return self.__dict__
