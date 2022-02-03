@@ -10,9 +10,9 @@ class Student:
 
     def to_json(self, attrs=None):
         if attrs is not None:
-            l = {}
+            q = {}
             for a in attrs:
                 if a in self.__dict__:
                     l[a] = self.__dict__[a]
-                    return l
+                    return q
         return self.__dict__
