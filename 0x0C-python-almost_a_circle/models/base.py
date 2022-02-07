@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""Class Base"""
+"""Class"""
 
 
 class Base:
-    def __init__(self, id=None):
-        __nb_objects = 0
-        self.id=None
-        if  id is not None:
-            self.id = id
+    """Base class"""
+    __nb_objects = 0
 
+    def __init__(self, id=None):
+        """Initialize method"""
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
