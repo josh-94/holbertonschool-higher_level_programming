@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-''' Class reactangle'''
+"""
+First Rectangle
+Class Rectangle that inherits from Base
+"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    ''' class rectangle definition'''
-
+    """Rectangle Class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        '''Method'''
+        """Initializa the data"""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -16,56 +18,56 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        ''' getter attribute width'''
+        """Retrieves the width"""
         return self.__width
 
     @width.setter
-    def width(self, value):
-        ''' setter attribute width'''
-        if type is not int:
+    def width(self, width):
+        """Sets the width to a value"""
+        if type(width) is not int:
             raise TypeError("width must be an integer")
-        if value <= 0:
+        if width <= 0:
             raise ValueError("width must be > 0")
-        self.__width = value
+        self.__width = width
 
     @property
     def height(self):
-        ''' getter attribute height'''
+        """Retrieves the height"""
         return self.__height
 
     @height.setter
-    def height(self, value):
-        ''' setter attribute height'''
-        if type is not int:
+    def height(self, height):
+        """Sets the height to a value"""
+        if type(height) is not int:
             raise TypeError("height must be an integer")
-        if value <= 0:
+        if height <= 0:
             raise ValueError("height must be > 0")
-        self.__height = value
+        self.__height = height
 
     @property
     def x(self):
-        ''' getter attribute x'''
+        """Retrieves the x"""
         return self.__x
 
     @x.setter
-    def x(self, value):
-        ''' setter attribute x'''
-    if type is not int:
-        raise TypeError("x must be an integer")
-    if value < 0:
-        raise ValueError("x must be > 0")
-    self.__x = value
+    def x(self, x):
+        """Sets the x to a value"""
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = x
 
     @property
     def y(self):
-        ''' getter attribute y'''
+        """Retrieves the y"""
         return self.__y
 
     @y.setter
-    def y(self, value):
-        ''' setter attribute y'''
-    if type is not int:
-        raise TypeError("y must be an integer")
-    if value < 0:
-        raise ValueError("y must be > 0")
-    self.__y = value
+    def y(self, y):
+        """Sets the y to a value"""
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = y
