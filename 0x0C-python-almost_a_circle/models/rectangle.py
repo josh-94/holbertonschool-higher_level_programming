@@ -90,3 +90,13 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height
         )
+    
+    def update(self, *args, **kwargs):
+        ''' assigns attributes'''
+        if args is not None and len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, (list(self.__dict__.keys()))[i], args[i])
+        else:
+            for key in kwargs:
+                if hasattr(self, key) is True:
+                    setattr(self, key, kwargs[key])
