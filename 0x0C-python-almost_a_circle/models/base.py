@@ -28,6 +28,7 @@ class Base:
 
     # def save_to_file(cls, list_objs):
 
+    @staticmethod
     def from_json_string(json_string):
         """return list of the JSON"""
         if json_string is None or json_string == []:
