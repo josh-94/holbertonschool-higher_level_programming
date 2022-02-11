@@ -27,3 +27,10 @@ class Square(Rectangle):
         square = "[Square] ({}) {}/{} - {}"
         square = square.format(self.id, self.x, self.y, self.width)
         return square
+
+    # def update(self, *args, **kwargs):
+    def to_dictionary(self):
+        """dictionary"""
+        list_square = ["id", "size", "x", "y"]
+        value_square = (self.id, self.size, self.x, self.y)
+        return dict(zip(list_square, value_square))
