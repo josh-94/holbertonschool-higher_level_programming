@@ -3,6 +3,7 @@
 First Square
 Class Square that inherits from Rectangle
 """
+from unittest import skip
 from models.rectangle import Rectangle
 
 
@@ -28,7 +29,18 @@ class Square(Rectangle):
         square = square.format(self.id, self.x, self.y, self.width)
         return square
 
-    # def update(self, *args, **kwargs):
+    def update(self, *args, **kwargs):
+        """Assign attributes"""
+        keys = ["id", "size", "x", "y"]
+
+        if len(args) > 0:
+            for i in range(len(args)):
+                setattr(self, keys[i], args[i])
+        else:
+            for key in kwargs:
+                if hasattr(self, key) is True:
+                    setattr(self, key, kwargs[key])
+
     def to_dictionary(self):
         """dictionary"""
         list_square = ["id", "size", "x", "y"]
