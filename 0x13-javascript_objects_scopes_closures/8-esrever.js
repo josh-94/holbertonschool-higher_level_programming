@@ -1,5 +1,7 @@
 #!/bin/usr/node
 exports.esrever = function (list) {
-  return list.map((item,idx) => list[list.length-1-idx])
-
+  const new_list = [];
+  list.forEach(value => new_list.unshift(value));
+  
+  return(new_list);
 };
