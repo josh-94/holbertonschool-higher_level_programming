@@ -7,5 +7,5 @@ if __name__ == "__main__":
 
     print("Body response:")
     print("\t- type:", type(html))
-    print("\t- content: " + str(html))
+    print("\t- content:", (html))
     print("\t- utf8 content: " + response.msg)
